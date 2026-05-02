@@ -1,20 +1,19 @@
 import { Metadata } from "next";
-import Image from "next/image";
-import { Card } from "./components/card/card";
-import { Section } from "./components/section/Section";
+import { Section } from "../components/section/Section";
+import { title } from "process";
 
 export const metadata: Metadata = {
-  title: "CordaSe - Pagina Inicial"
+  title: "CordaSe - Todos os cursos"
 };
 
-export default function PageHome() {
-  return (
-      <main className="mt-8 flex justify-center">
-    <div className='w-full min-[880px]:max-w-[880px]'>
-        <Section
-        title="Veja mais Cursos"
-        variant="h-list"
-         items={[
+export default function PageCursos() {
+    return(
+        <main className="mt-8 flex justify-center">
+          <div className='w-full min-[880px]:max-w-[880px]'>
+            <Section
+            title="Todos os cursos"
+            variant="grid"
+            items={[
               {
                 href: '/cursos',
                 title: 'Curso de API Rest, Node e Typescript',
@@ -123,8 +122,8 @@ export default function PageHome() {
             `
               }, 
             ]}
-        />
-    </div>
-      </main>
-  );
-} 
+            />
+          </div>
+        </main>
+    );
+}
