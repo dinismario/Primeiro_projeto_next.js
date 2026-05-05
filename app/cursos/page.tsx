@@ -12,7 +12,7 @@ export default function PageCursos() {
           <div className='w-full min-[880px]:max-w-[880px]'>
             <Section
             title="Todos os cursos"
-            variant="grid"
+            variant="h-list"
             items={[
               {
                 href: '/cursos',

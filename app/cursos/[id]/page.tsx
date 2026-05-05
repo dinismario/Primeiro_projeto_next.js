@@ -12,7 +12,8 @@ interface Props{
 export async function generateMetadata({params}: Props): Promise<Metadata> {
 
   return{
-    title: params.id
+    title: params.id,
+    description: params.id
   };
 };
 
@@ -28,12 +29,13 @@ export default function PageCurseDetail({params}: Props){
                         idCourse="1"
                         title="Curso de Figma para DEVs "
                         imageUrl="https://i.ytimg.com/vi/SVepTuBK4V0/hqdefault.jpg"
+
                         />
                     </div>
 
                     <div className="flex-[2] flex flex-col gap-12 pb-12">
                         <CourseHeader
-                        numberOfClsses ={48}
+                        numberOfClsses = {48}
                         title="Curso de Figma para DEVs"               
                         description="Lorem ipsum dolor sit, amet consectetur adipisicing elit.
            obis sint cupiditate necessitatibus aliquam consequatur 

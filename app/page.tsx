@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { Card } from "./components/card/card";
 import { Section } from "./components/section/Section";
+import { KeepWatching } from "./components/KeepWatching ";
 
 export const metadata: Metadata = {
   title: "CordaSe - Pagina Inicial"
@@ -10,13 +11,15 @@ export const metadata: Metadata = {
 export default function PageHome() {
   return (
       <main className="mt-8 flex justify-center">
-    <div className='w-full min-[880px]:max-w-[880px]'>
+    <div className='w-full min-[880px]:max-w-[880px] flex flex-col gap-4'>
+
+        <KeepWatching />
         <Section
-        title="Veja mais Cursos"
         variant="h-list"
+        title="Veja mais Cursos"
          items={[
               {
-                href: '/cursos',
+                href: '/cursos/123',
                 title: 'Curso de API Rest, Node e Typescript',
                 image: 'https://i.ytimg.com/vi/SVepTuBK4V0/hqdefault.jpg',
                 description: `onsectetur adipisicing elit. 
@@ -43,7 +46,7 @@ export default function PageHome() {
               }, 
 
               {
-                href: '/cursos',
+                href: '/cursos/123',
                 title: 'Curso de API Rest, Node e Typescript',
                 image: 'https://i.ytimg.com/vi/SVepTuBK4V0/hqdefault.jpg',
                 description: `onsectetur adipisicing elit. 
@@ -70,7 +73,7 @@ export default function PageHome() {
               }, 
 
               {
-                href: '/cursos',
+                href: '/cursos/123',
                 title: 'Curso de API Rest, Node e Typescript',
                 image: 'https://i.ytimg.com/vi/SVepTuBK4V0/hqdefault.jpg',
                 description: `onsectetur adipisicing elit. 
@@ -97,7 +100,7 @@ export default function PageHome() {
               }, 
 
               {
-                href: '/cursos',
+                href: '/cursos/123',
                 title: 'Curso de API Rest, Node e Typescript',
                 image: 'https://i.ytimg.com/vi/SVepTuBK4V0/hqdefault.jpg',
                 description: `onsectetur adipisicing elit. 

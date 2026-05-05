@@ -1,41 +1,50 @@
-'use client';
+"use client";
 
-import {MdShare } from "react-icons/md";
+import { useEffect, useState } from "react";
+import { MdShare } from "react-icons/md";
 import { CollapsibleText } from "./components/CollapsibleText";
 import { ContentCopy } from "./components/CopyContext";
 
-
-interface ICourseHeaderProps{
-    title: string;
-    description: string;
-    numberOfClsses: number;
+interface ICourseHeaderProps {
+  title: string;
+  description: string;
+  numberOfClasses: number;
 }
 
-export const CourseHeader = ({title, description, numberOfClsses}: ICourseHeaderProps) =>{
+export const CourseHeader = ({
+  title,
+  description,
+  numberOfClasses,
+}: ICourseHeaderProps) => {
+  const [url, setUrl] = useState("");
 
-    return(
+  useEffect(() => {
+    setUrl(window.location.href);
+  }, []);
 
+  return (
     <div className="flex flex-col gap-2">
-        <h1 className="font-extrabold text-xl">
-            {title}  
-        </h1>
-        
-        <CollapsibleText numberOfLineswhenClosed={3}>   
-           {description}
-        </CollapsibleText>
+      <h1 className="text-xl font-extrabold">
+        {title}
+      </h1>
 
-        <div className="flex gap-2 items-center">
+      <CollapsibleText numberOfLineswhenClosed={3}>
+        {description}
+      </CollapsibleText>
 
-           <ContentCopy title='Copie o conteúdo abaixo' content={window.location.href}>
-             <button className="py-2 px-4 bg-neutral-800 rounded-full flex gap-2 items-center">
-                <MdShare/>
-                Compartilhar 
-            </button>
-            </ContentCopy>
-            <span>
-                {numberOfClsses} aulas
-            </span>
-        </div>
+      <div className="flex items-center gap-2">
+        <ContentCopy
+          title="Copie o conteúdo abaixo"
+          content={url}
+        >
+          <button className="flex items-center gap-2 rounded-full bg-neutral-800 px-4 py-2">
+            <MdShare />
+            Compartilhar
+          </button>
+        </ContentCopy>
+
+        <span>{numberOfClasses} aulas</span>
+      </div>
     </div>
-    );
+  );
 };
